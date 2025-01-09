@@ -1,4 +1,22 @@
 /* Gaya Umum */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Mulai dengan transparan */
+    transform: translateY(20px); /* Geser ke bawah */
+  }
+  to {
+    opacity: 1; /* Tampil sepenuhnya */
+    transform: translateY(0); /* Geser ke posisi awal */
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -6,8 +24,8 @@ body {
   padding: 0;
   background: linear-gradient(
     135deg,
-    #d3d3d3,
-    #ffffff
+    #616161,
+    #bdc9ca
   ); /* Warna abu-abu ke putih */
   color: #333;
 }
@@ -28,7 +46,12 @@ h2 {
 #kategori {
   text-align: center;
   font-size: larger;
-  box-shadow: -7px 8px 9px 10px rgba(0, 0, 0, 0.52);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#kategori:hover {
+  box-shadow: -7px 5px 5px 5px rgba(43, 85, 90, 0.623);
+  transform: translateY(-5px);
 }
 
 /* Formulir */
@@ -38,9 +61,6 @@ form {
   margin: 20px auto;
   padding: 20px;
   border-radius: 10px;
-}
-
-form:hover {
   box-shadow: -7px 8px 9px 10px rgba(0, 0, 0, 0.52);
 }
 
@@ -100,7 +120,8 @@ select {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: 300px;
+  width: 20vh;
+  height: auto;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
@@ -171,5 +192,6 @@ select {
 }
 
 .back-button:hover {
-  background-color: #0056b3;
+  background-color: #212b35;
+  border-radius: 2% 4%;
 }
