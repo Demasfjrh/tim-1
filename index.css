@@ -1,9 +1,9 @@
-/* css */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
+    color: #333;
 }
 
 header {
@@ -15,52 +15,66 @@ header {
 
 main {
     padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 h1, h2 {
-    color: #333;
+    color: #444;
 }
 
-table {
-    width: 100%;
-    margin-bottom: 2rem;
-    border-collapse: collapse;
-}
-
-table th, table td {
-    padding: 1rem;
-    text-align: left;
-}
-
-table th {
-    background-color: #444;
-    color: #fff;
-}
-
-table td {
-    background-color: #eee;
-}
-
-form {
+.card-container {
     display: flex;
-    flex-direction: column;
-    max-width: 400px;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
 }
 
-form input, form button {
-    padding: 0.5rem;
-    margin-bottom: 1rem;
+.card {
+    background-color: #fff;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
+    width: 300px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-form button {
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.card-content h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.card-content p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.card-content .price {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.card-content button {
+    padding: 0.5rem 1rem;
     background-color: #333;
     color: #fff;
-    cursor: pointer;
     border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-form button:hover {
+.card-content button:hover {
     background-color: #555;
 }
