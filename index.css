@@ -1,104 +1,180 @@
-/* css */
-/* General Styling */
+/* Reset default styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* Header Styling */
+/* Header styling */
 header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+.header-info {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-.logo img {
-    height: 50px;
+/* Navbar styling */
+.mainmenu nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
 }
 
-.logo span {
-    font-size: 24px;
-    font-weight: bold;
-    color: #ffcc00; /* Gold color for emphasis */
+.mainmenu nav a,
+.mainmenu nav button {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #555;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+.mainmenu nav button:hover,
+.mainmenu nav a:hover {
+  background-color: #888;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
+/* Theme toggle button */
+#toggle-theme {
+  background-color: #444;
+  font-weight: bold;
 }
 
-.search {
-    display: flex;
-    align-items: center;
+#toggle-theme:hover {
+  background-color: #666;
 }
 
-.search input {
-    padding: 5px;
-    border: none;
-    border-radius: 5px;
+/* Logo styling */
+.Cobee {
+  width: 150px;
+  margin-top: 20px;
 }
 
-.search button {
-    background-color: #ffcc00;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
+/* Main content styling */
+main {
+  padding: 40px 20px;
+  text-align: center;
 }
 
-/* Hero Section Styling */
-.hero {
-    background-image: url('hero-background.jpg'); /* Replace with your image */
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
+/* Card container */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
 }
 
-.hero h1 {
-    font-size: 48px;
-    margin: 0;
+.card-container .section {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
-.hero p {
-    font-size: 20px;
-    margin: 10px 0;
+.card-container h2 {
+  color: #333;
+  margin-bottom: 10px;
 }
 
-.button {
-    background-color: #ffcc00;
-    color: #333;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+.card-container p {
+  color: #555;
 }
 
-/* Footer Styling */
+/* Add car form section */
+#add-car {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#add-car h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#car-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#car-form input {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#car-form button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#car-form button:hover {
+  background-color: #555;
+}
+
+/* Footer styling */
 footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #333;
-    color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* Search input */
+#search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#search-container input[type="text"] {
+  padding: 10px;
+  width: 400px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+#search-container button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#search-container button:hover {
+  background-color: #555;
 }
