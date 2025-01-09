@@ -1,83 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <title>cari mobil lo</title>
-    <link
-      rel="stylesheet"
-      href="index.css" />
-    <script
-      src="https://kit.fontawesome.com/54c22fa38a.js"
-      crossorigin="anonymous"></script>
-  </head>
 
-  <body>
-    <header>
-      <h1 class="header-info">Cari Mobil LO anj !!!</h1>
-      <div class="mainmenu">
-        <nav>
-          <button onclick="skrol()">Jual Mobil</button>
-          <a href="Contact.html">Contact</a>
-          <a href="About.html">About Us</a>
-          <button id="toggle-theme">dark</button>
-        </nav>
-      </div>
-      <img
-        src="asset/index/logofox.png"
-        alt="Cobee"
-        class="Cobee" />
-    </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Mobil Bekas</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Daftar Mobil Bekas</h1>
 
-    <main>
-      <div class="main-content">
-        <div class="section">
-          <h2>Layanan Kami</h2>
-          <p>
-            Kami menawarkan berbagai layanan terbaik untuk kebutuhan Anda.
-            Jelajahi pilihan kami untuk solusi yang tepat.
-          </p>
-        </div>
-        <div class="section">
-          <h2>Tentang Kami</h2>
-          <p>
-            Kami adalah tim profesional yang berdedikasi untuk memberikan
-            layanan terbaik. Temukan lebih lanjut tentang visi dan misi kami.
-          </p>
-        </div>
-        <div class="section">
-          <h2>Kontak Kami</h2>
-          <p>
-            Ingin menghubungi kami? Jangan ragu untuk mengirimkan pesan atau
-            menelepon kami untuk informasi lebih lanjut.
-          </p>
-        </div>
-      </div>
+    <form id="addCarForm">
+        <h2>Tambahkan Mobil Anda!</h2>
+        <input type="text" id="carName" placeholder="Nama Mobil" required>
+        <input type="number" id="carPrice" placeholder="Harga Mobil" required>
+        <input type="text" id="carDescription" placeholder="Deskripsi Mobil" required>
+        <select id="carCategory" required>
+            <option value="" disabled selected>Pilih Kategori</option>
+            <option value="keluarga">Mobil Keluarga</option>
+            <option value="sport">Mobil Sport</option>
+            <option value="mpv">Mobil MPV</option>
+        </select>
+        <button type="submit">Tambahkan Mobil</button>
+    </form>
 
-      <section id="add-car">
-        <h2>Tambah Mobil</h2>
-        <form id="car-form">
-          <input
-            type="text"
-            id="car-name"
-            placeholder="Nama Mobil"
-            required />
-          <input
-            type="number"
-            id="car-price"
-            placeholder="Harga Mobil"
-            required />
-          <button type="submit">Tambah Mobil</button>
-        </form>
-      </section>
-    </main>
-
-    <footer>
-      <p>&copy; 2025 PT.cari_mobil_lo! . K Semua Hak Dilindungi.</p>
-    </footer>
+    <label for="kategori">Sortir berdasarkan kategori:</label>
+    <select id="kategori" onchange="sortCarsByCategory()">
+        <option value="all">Semua</option>
+        <option value="keluarga">Mobil Keluarga</option>
+        <option value="sport">Mobil Sport</option>
+        <option value="mpv">Mobil MPV</option>
+    </select>
+    <div class="card-container"></div>
 
     <script src="index.js"></script>
-  </body>
+</body>
 </html>
