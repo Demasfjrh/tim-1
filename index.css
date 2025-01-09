@@ -178,3 +178,7 @@ footer {
 #search-container button:hover {
   background-color: #555;
 }
+
+#file {
+  background-color: #333;
+}

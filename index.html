@@ -16,10 +16,12 @@
 
   <body>
     <header>
-      <h1 class="header-info">Cari Mobil LO anj !!!</h1>
       <div class="mainmenu">
+        <h1 class="header-info">Cari Mobil LO anj !!!</h1>
         <div id="search-container">
-          <input type="text" placeholder="Cari mobil..." />
+          <input
+            type="text"
+            placeholder="Cari mobil..." />
           <button>Cari</button>
         </div>
         <nav>
@@ -33,6 +35,16 @@
         src="asset/index/logofox.png"
         alt="logo"
         class="logo" />
+      <div class="kategori">
+        <label for="kategori"></label>
+        <section
+          id="kategori"
+          onchange="kategori()">
+          <option value="lcgc"></option>
+          <option value="sport"></option>
+          <option value="suv"></option>
+        </section>
+      </div>
     </header>
 
     <main>
@@ -73,7 +85,15 @@
             id="car-price"
             placeholder="Harga Mobil"
             required />
-          <button type="submit">Tambah Mobil</button>
+          <input
+            type="text"
+            placeholder="masukan deskripsi" />
+          <input
+            type="file"
+            id="file"
+            placeholder="masukan foto mobil" />
+          <span id="file-name">masukan gambar mobil</span>
+          <button type="submit">Jual Mobil</button>
         </form>
       </section>
     </main>
@@ -82,7 +102,6 @@
       <p>&copy; 2025 PT.cari_mobil_lo! . K Semua Hak Dilindungi.</p>
     </footer>
 
-    <script type="modul" src="index.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
-
