@@ -3,21 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penjualan Mobil Bekas</title>
+    <title>Daftar Mobil Bekas</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header>
-        <h1>Penjualan Mobil Bekas</h1>
-    </header>
-    <main>
-        <section id="car-list">
-            <h2>Daftar Mobil Bekas</h2>
-            <div class="card-container">
-                <!-- Kartu mobil akan ditampilkan di sini -->
-            </div>
-        </section>
-    </main>
+    <h1>Daftar Mobil Bekas</h1>
+
+    <form id="addCarForm">
+        <h2>Tambahkan Mobil Anda!</h2>
+        <input type="text" id="carName" placeholder="Nama Mobil" required>
+        <input type="number" id="carPrice" placeholder="Harga Mobil" required>
+        <input type="text" id="carDescription" placeholder="Deskripsi Mobil" required>
+        <select id="carCategory" required>
+            <option value="" disabled selected>Pilih Kategori</option>
+            <option value="keluarga">Mobil Keluarga</option>
+            <option value="sport">Mobil Sport</option>
+            <option value="mpv">Mobil MPV</option>
+        </select>
+        <button type="submit">Tambahkan Mobil</button>
+    </form>
+
+    <label for="kategori">Sortir berdasarkan kategori:</label>
+    <select id="kategori" onchange="sortCarsByCategory()">
+        <option value="all">Semua</option>
+        <option value="keluarga">Mobil Keluarga</option>
+        <option value="sport">Mobil Sport</option>
+        <option value="mpv">Mobil MPV</option>
+    </select>
+    <div class="card-container"></div>
+
     <script src="index.js"></script>
 </body>
 </html>
