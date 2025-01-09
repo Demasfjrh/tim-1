@@ -40,6 +40,14 @@ header nav ul li a {
   font-weight: bold;
 }
 
+.pilih :hover {
+  color: #979696;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
 header .language button {
   background: transparent;
   border: 2px solid #fff;
@@ -109,6 +117,11 @@ header .language button {
 
 .hero-content .cta:hover {
   background: #e63e00;
+}
+
+#logo{
+  height: 5vh;
+  width: 5vh;
 }
 
 
