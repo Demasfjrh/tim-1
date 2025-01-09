@@ -1,20 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <main>
-        <section id="add-car">
-            <h2>Tambah Mobil</h2>
-            <form id="car-form">
-                <input type="text" id="car-name" placeholder="Nama Mobil" required>
-                <input type="number" id="car-price" placeholder="Harga Mobil" required>
-                <button type="submit">Tambah Mobil</button>
-            </form>
-        </section>
-    </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Mobil Bekas</title>
+    <link
+      rel="stylesheet"
+      href="form.css" />
+  </head>
+  <body>
+    <h1></h1>
+
+    <!-- formulir -->
+    
+    <label for="kategori" style="font-size: xx-large;">Sortir berdasarkan kategori:</label>
+    <select
+    id="kategori"
+    onchange="sortCarsByCategory()">
+    <option value="all">Semua</option>
+      <option value="keluarga">Mobil Keluarga</option>
+      <option value="sport">Mobil Sport</option>
+      <option value="mpv">Mobil MPV</option>
+    </select>
+    <div class="card-container"></div>
+
+    <form id="addCarForm">
+      <h2>Daftarkan Mobil Anda!</h2>
+      <input
+        type="text"
+        id="carName"
+        placeholder="Nama Mobil"
+        required />
+      <input
+        type="number"
+        id="carPrice"
+        placeholder="Harga Mobil"
+        required />
+      <input
+        type="text"
+        id="carDescription"
+        placeholder="Deskripsi Mobil"
+        required />
+      <!-- foto -->
+      <label for="foto" style="font-size: 2vh;"> Masukan Foto Mobil Anda</label>
+      <input
+        type="text"
+        placeholder="masukan link gambar"
+        id="foto"
+        accept="im" />
+
+      <select
+        id="carCategory"
+        required>
+        <option
+          value=""
+          disabled
+          selected>
+          Pilih Kategori
+        </option>
+        <option value="keluarga">Mobil Keluarga</option>
+        <option value="sport">Mobil Sport</option>
+        <option value="mpv">Mobil MPV</option>
+      </select>
+      <button type="submit">Tambahkan Mobil</button>
+    </form>
+
+    <div class="container">
+      <a
+        href="index.html"
+        class="back-button"
+        >Back to home</a
+      >
+    </div>
+
+    <script src="index.js"></script>
+  </body>
 </html>

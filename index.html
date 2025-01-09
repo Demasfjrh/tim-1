@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Mobil Bekas</title>
+    <title>Dream Car</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>Daftar Mobil Bekas</h1>
+    <header>
+        <div class="logo">
+            <img src="asset/logo_merah-removebg-preview.png" alt="Logo" id="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a id = 'sport' onclick="sortCarsByCategory()" href="explor.html" value = 'sport'>mobil sport</a></li>
+                <li><a href="#" class="Pilih">mobil keluarga</a></li>
+                <li><a href="#" class="Pilih">mobil sport</a></li>
+                <li><a href="explor.html" class="Pilih">semua mobil</a></li>
+            </ul>
+        </nav>
+        <div class="language">
+            <a href="explor.html" id="ktg">kategori</a>
+        </div>
+    </header>
 
-    <form id="addCarForm">
-        <h2>Tambahkan Mobil Anda!</h2>
-        <input type="text" id="carName" placeholder="Nama Mobil" required>
-        <input type="number" id="carPrice" placeholder="Harga Mobil" required>
-        <input type="text" id="carDescription" placeholder="Deskripsi Mobil" required>
-        <select id="carCategory" required>
-            <option value="" disabled selected>Pilih Kategori</option>
-            <option value="keluarga">Mobil Keluarga</option>
-            <option value="sport">Mobil Sport</option>
-            <option value="mpv">Mobil MPV</option>
-        </select>
-        <button type="submit">Tambahkan Mobil</button>
-    </form>
+    <section class="hero">
+        <div class="overlay"></div>
+        <video autoplay muted loop class="background-video">
+            <source src="asset/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Dream car<br>Dream price</h1>
+            <a href="form.html" class="cta">Explore More</a>
+        </div>
+      </section>
 
-    <label for="kategori">Sortir berdasarkan kategori:</label>
-    <select id="kategori" onchange="sortCarsByCategory()">
-        <option value="all">Semua</option>
-        <option value="keluarga">Mobil Keluarga</option>
-        <option value="sport">Mobil Sport</option>
-        <option value="mpv">Mobil MPV</option>
-    </select>
-    <div class="card-container"></div>
+    <footer>
+        <p>© 2025 www.cari_mobil_lo.com</p>
+    </footer>
 
     <script src="index.js"></script>
 </body>
