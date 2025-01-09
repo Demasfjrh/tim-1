@@ -1,109 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <title>cari mobil lo</title>
-    <link
-      rel="stylesheet"
-      href="index.css" />
-    <script
-      src="https://kit.fontawesome.com/54c22fa38a.js"
-      crossorigin="anonymous"></script>
-  </head>
-
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Car</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
     <header>
-      <div class="mainmenu">
-        <img
-          src="asset/index/logofox.png"
-          alt="logo"
-          class="logo" />
-        <h1 class="header-info">Cari Mobil LO anj !!!</h1>
-        <div id="search-container">
-          <input
-            type="text"
-            placeholder="Cari mobil..." />
-          <button>Cari</button>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
         </div>
         <nav>
-          <ul>
-            <li><a href="#">Mobil Bekas</a></li>
-            <li><a href="#">Mobil Baru</a></li>
-            <li><a href="#">Mobil Keluarga</a></li>
-            <li><a href="#">Lainnya</a></li>
-        </ul>
+            <ul>
+                <li><a href="#">Mobil Bekas</a></li>
+                <li><a href="#">Mobil Baru</a></li>
+                <li><a href="#">Mobil Keluarga</a></li>
+                <li><a href="#">Lainnya</a></li>
+            </ul>
         </nav>
-      </div>
-      <div class="kategori">
-        <label for="kategori"></label>
-        <section
-          id="kategori"
-          onchange="kategori()">
-          <option value="lcgc"></option>
-          <option value="sport"></option>
-          <option value="suv"></option>
-        </section>
-      </div>
+        <div class="language">
+            <button>Pilih Kategori</button>
+        </div>
     </header>
 
-    <main>
-      <div class="card-container">
-        <div class="section">
-          <h2>Layanan Kami</h2>
-          <p>
-            Kami menawarkan berbagai layanan terbaik untuk kebutuhan Anda.
-            Jelajahi pilihan kami untuk solusi yang tepat.
-          </p>
+    <section class="hero">
+        <div class="overlay"></div>
+        <video autoplay muted loop class="background-video">
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Dream car<br>Dream price</h1>
+            <p>CARI MOBIL LO ANJINGG !!!!!!</p>
+            <a href="#" class="cta">Explore More</a>
         </div>
-        <div class="section">
-          <h2>Tentang Kami</h2>
-          <p>
-            Kami adalah tim profesional yang berdedikasi untuk memberikan
-            layanan terbaik. Temukan lebih lanjut tentang visi dan misi kami.
-          </p>
-        </div>
-        <div class="section">
-          <h2>Kontak Kami</h2>
-          <p>
-            Ingin menghubungi kami? Jangan ragu untuk mengirimkan pesan atau
-            menelepon kami untuk informasi lebih lanjut.
-          </p>
-        </div>
+      </section>
+      <div class="card">
+        <p>anjing banget contol</p>
       </div>
 
-      <section id="add-car">
-        <h2>Tambah Mobil</h2>
-        <form id="car-form">
-          <input
-            type="text"
-            id="car-name"
-            placeholder="Nama Mobil"
-            required />
-          <input
-            type="number"
-            id="car-price"
-            placeholder="Harga Mobil"
-            required />
-          <input
-            type="text"
-            placeholder="masukan deskripsi" />
-          <input
-            type="file"
-            id="file"
-            placeholder="masukan foto mobil" />
-          <span id="file-name">masukan gambar mobil</span>
-          <button type="submit">Jual Mobil</button>
-        </form>
-      </section>
-    </main>
-
     <footer>
-      <p>&copy; 2025 PT.cari_mobil_lo! . K Semua Hak Dilindungi.</p>
+        <p>© 2025 www.cari_mobil_lo.com</p>
     </footer>
-
-    <script src="index.js"></script>
-  </body>
+</body>
 </html>
