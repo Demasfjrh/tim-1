@@ -137,11 +137,11 @@ function editDescription(id) {
     }
   }
   if (newPrice !== null && newPrice.trim() !== '') {
-    car.name = newPrice;
+    car.price = newPrice.toLocaleString();
 
     const priceElement = document.getElementById(`harga-${car.id}`);
     if (priceElement) {
-      priceElement.textContent = newPrice;
+      priceElement.textContent = newPrice.toLocaleString();
     }
   }
 }
