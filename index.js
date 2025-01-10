@@ -76,7 +76,7 @@ function displayCars(filteredCars = cars) {
                 }">Rp ${car.price.toLocaleString()}</p>
                 <button onclick="editDescription(${
                   car.id
-                })">Edit Deskripsi</button>
+                })">Edit</button>
                 <button onclick="buyCar(${car.id})">Beli</button>
             </div>
         `;
@@ -137,11 +137,19 @@ function editDescription(id) {
     }
   }
   if (newPrice !== null && newPrice.trim() !== '') {
-    car.name = newPrice;
+    car.price = newPrice;
+
+    const rupiah = (number)=>{
+      return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR"
+      }).format(number);
+    }
+    let harga = rupiah(car.price)
 
     const priceElement = document.getElementById(`harga-${car.id}`);
     if (priceElement) {
-      priceElement.textContent = newPrice;
+      priceElement.textContent = harga
     }
   }
 }
