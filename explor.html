@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Udah Lengkap</title>
+    <link
+      rel="stylesheet"
+      href="fileNew.css" />
+  </head>
+  <body>
+    <h1>Daftar Mobil Bekas</h1>
+
+    <form id="addCarForm">
+      <h2>Tambahkan Mobil Anda!</h2>
+      <input
+        type="text"
+        id="carName"
+        placeholder="Nama Mobil"
+        required />
+      <input
+        type="number"
+        id="carPrice"
+        placeholder="Harga Mobil"
+        required />
+      <input
+        type="text"
+        id="carDescription"
+        placeholder="Deskripsi Mobil"
+        required />
+      <select
+        id="carCategory"
+        required>
+        <option
+          value=""
+          disabled
+          selected>
+          Pilih Kategori
+        </option>
+        <option value="keluarga">Mobil Keluarga</option>
+        <option value="sport">Mobil Sport</option>
+        <option value="mpv">Mobil MPV</option>
+      </select>
+      <button type="submit">Tambahkan Mobil</button>
+    </form>
+
+    <label for="kategori">Sortir berdasarkan kategori:</label>
+    <select
+      id="kategori"
+      onchange="sortCarsByCategory()">
+      <option value="all">Semua</option>
+      <option value="keluarga">Mobil Keluarga</option>
+      <option value="sport">Mobil Sport</option>
+      <option value="mpv">Mobil MPV</option>
+    </select>
+    <div class="card-container"></div>
+
+    <script src="fileNew.js"></script>
+  </body>
+</html>

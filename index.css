@@ -124,7 +124,16 @@ header .language button {
   width: 5vh;
 }
 
-
+#ktg{
+  background-color: #fff;
+  color: black;
+  border-radius: 1px;
+  font-size: larger;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
 /* Footer */
 footer {
