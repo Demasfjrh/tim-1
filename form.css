@@ -44,8 +44,8 @@ header{
 
 header button{
   background-color: #949494;
-  background-image: linear-gradient(to bottom, #949494, #333);
-  font-size: x-large;
+  background-image: linear-gradient(to bottom, #f6f6f7, #13aaaa);
+  font-size: 1.5vh;
 }
 
 nav{

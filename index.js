@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
       form.style.display = 'none';
       cards.style.display = 'flex';
       toggleButton.textContent = 'Jual Mobil Anda Di Sini'; // Ubah teks tombol
-      selectbtn.style.display = 'flex'
+      selectbtn.style.display = 'contents'
     }
   });
 });
