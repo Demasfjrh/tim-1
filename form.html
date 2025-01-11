@@ -11,21 +11,36 @@
       href="form.css" />
   </head>
   <body>
-
     <header>
-      
+      <img
+        src="asset/logo_merah-removebg-preview.png"
+        alt="logo"
+        class="logo" />
+      <nav>
+        <button
+          id="show"
+          class="btn-show">
+          Jual Mobil Anda Di Sini
+        </button>
+      </nav>
     </header>
     <!-- formulir -->
-    
-    <label for="kategori" style="font-size: xx-large;">Sortir berdasarkan kategori:</label>
-    <select
-    id="kategori"
-    onchange="sortCarsByCategory()">
-    <option value="all">Semua</option>
-      <option value="keluarga">Mobil Keluarga</option>
-      <option value="sport">Mobil Sport</option>
-      <option value="mpv">Mobil MPV</option>
-    </select>
+    <div class="sort-panel">
+      <label
+        for="kategori"
+        style="font-size: xx-large"
+        >Sortir berdasarkan kategori:</label
+      >
+      <select
+        id="kategori"
+        onchange="sortCarsByCategory()">
+        <option value="all">Semua</option>
+        <option value="keluarga">Mobil Keluarga</option>
+        <option value="sport">Mobil Sport</option>
+        <option value="mpv">Mobil MPV</option>
+      </select>
+    </div>
+
     <div class="card-container"></div>
 
     <form id="addCarForm">
@@ -45,8 +60,11 @@
         id="carDescription"
         placeholder="Deskripsi Mobil"
         required />
-      <!-- foto -->
-      <label for="foto" style="font-size: 2vh;"> Masukan Foto Mobil Anda</label>
+      <label
+        for="foto"
+        style="font-size: 2vh">
+        Masukan Foto Mobil Anda</label
+      >
       <input
         type="text"
         placeholder="masukan link gambar"
@@ -76,6 +94,10 @@
         >Back to home</a
       >
     </div>
+
+    <footer>
+      <p>© 2025 www.cari_mobil_lo.com</p>
+    </footer>
 
     <script src="index.js"></script>
   </body>

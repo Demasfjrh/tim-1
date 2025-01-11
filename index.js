@@ -74,9 +74,7 @@ function displayCars(filteredCars = cars) {
                 <p class="price" id="harga-${
                   car.id
                 }">Rp ${car.price.toLocaleString()}</p>
-                <button onclick="editDescription(${
-                  car.id
-                })">Edit</button>
+                <button onclick="editDescription(${car.id})">Edit</button>
                 <button onclick="buyCar(${car.id})">Beli</button>
             </div>
         `;
@@ -139,17 +137,17 @@ function editDescription(id) {
   if (newPrice !== null && newPrice.trim() !== '') {
     car.price = newPrice;
 
-    const rupiah = (number)=>{
-      return new Intl.NumberFormat("id-ID", {
-        style: "currency",
-        currency: "IDR"
+    const rupiah = (number) => {
+      return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
       }).format(number);
-    }
-    let harga = rupiah(car.price)
+    };
+    let harga = rupiah(car.price);
 
     const priceElement = document.getElementById(`harga-${car.id}`);
     if (priceElement) {
-      priceElement.textContent = harga
+      priceElement.textContent = harga;
     }
   }
 }
@@ -189,6 +187,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Event listener untuk formulir
 document.getElementById('addCarForm').addEventListener('submit', addCar);
+
+// * event listener untuk form dan untuk cards agar hide dan show
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('#addCarForm'); // Pastikan ID form sesuai
+  const cards = document.querySelector('.card-container'); // Sesuaikan selector cards
+  const toggleButton = document.querySelector('#show'); // Tombol toggle
+  const selectbtn = document.querySelector('.sort-panel'); // Tombol select
+
+  // Set kondisi awal: form tersembunyi, cards terlihat
+  form.style.display = 'none';
+  cards.style.display = 'flex';
+
+  // Tambahkan event listener untuk tombol
+  toggleButton.addEventListener('click', () => {
+    if (form.style.display === 'none') {
+      // Tampilkan form, sembunyikan cards
+      form.style.display = 'block';
+      cards.style.display = 'none';
+      toggleButton.textContent = 'Selesai'; // Ubah teks tombol
+      selectbtn.style.display = 'none'
+    } else {
+      // Tampilkan cards, sembunyikan form
+      form.style.display = 'none';
+      cards.style.display = 'flex';
+      toggleButton.textContent = 'Jual Mobil Anda Di Sini'; // Ubah teks tombol
+      selectbtn.style.display = 'flex'
+    }
+  });
+});
 
 // Tampilkan mobil saat halaman dimuat
 displayCars();
