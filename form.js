@@ -31,7 +31,7 @@ const cars = [
     id: 4,
     name: 'mercedes benz v-class',
     price: 1865000000,
-    kategori: 'mpv',
+    kategori: 'keluarga',
     description: 'Alternatif keluarga.',
     image:
       'https://lh7-us.googleusercontent.com/XXMlAcWYVNaWaPR3UCF-MB0Pp3yRGYYqL26UCORbzIXSb6iigKT7YqCskOQxVMup3ds0gQYEW9rnv87dA2z1b5WzT1UCPAdBX6pRNuhA8BVyynW_hvHLv6D9Y8lXJTGihzvwtQLKHtf2EiMRGmZR0Pg',
@@ -49,7 +49,7 @@ const cars = [
     id: 6,
     name: 'Lexus Lm 350',
     price: 450000000,
-    kategori: 'mpv',
+    kategori: 'keluarga',
     description: 'MPV premium dan luas.',
     image:
       'https://thumb.katadata.co.id/frontend/thumbnail/2022/09/02/zigi-6311c9a657afb-lexus-lm-350_910_512.jpg',
