@@ -2,12 +2,12 @@
 const cars = [
   {
     id: 1,
-    name: 'Toyota Avanza',
-    price: 180000000,
-    kategori: 'keluarga',
+    name: 'Toyota vnt innova',
+    price: 430000000,
+    kategori: 'suv',
     description: 'Mobil keluarga nyaman.',
     image:
-      'https://www.toyota.astra.co.id//sites/default/files/2023-09/1-avanza-purplish-silver.png',
+      'https://th.bing.com/th/id/OIP.LyBIy8JVcRyo-12mGPX19AHaFj?rs=1&pid=ImgDetMain',
   },
   {
     id: 2,
@@ -20,21 +20,21 @@ const cars = [
   },
   {
     id: 3,
-    name: 'Suzuki Ertiga',
+    name: 'Fortuner vnt biturbo',
     price: 210000000,
-    kategori: 'mpv',
-    description: 'MPV kapasitas besar.',
+    kategori: 'suv',
+    description: 'Suv disel terbaik.',
     image:
-      'https://suzuki-tuban.com/wp-content/uploads/2022/06/ALL-NEW-SUZUKI-ERTIGA-HYBRID.png',
+      'https://th.bing.com/th/id/OIP.6Bqs3vCOGc3Uhy-k9gqLsAHaFj?rs=1&pid=ImgDetMain',
   },
   {
     id: 4,
-    name: 'Daihatsu Xenia',
-    price: 190000000,
-    kategori: 'keluarga',
-    description: 'Alternatif keluarga terbaik.',
+    name: 'mercedes benz v-class',
+    price: 1865000000,
+    kategori: 'mpv',
+    description: 'Alternatif keluarga.',
     image:
-      'https://static.carmudi.co.id/W5iGZ-GD5f8U4_nHz8w--0VT_zU=/900x405/https://trenotomotif.com/ncs/images/daihatsu/All-new-Xenia/all-new-xenia.jpg',
+      'https://lh7-us.googleusercontent.com/XXMlAcWYVNaWaPR3UCF-MB0Pp3yRGYYqL26UCORbzIXSb6iigKT7YqCskOQxVMup3ds0gQYEW9rnv87dA2z1b5WzT1UCPAdBX6pRNuhA8BVyynW_hvHLv6D9Y8lXJTGihzvwtQLKHtf2EiMRGmZR0Pg',
   },
   {
     id: 5,
@@ -47,12 +47,12 @@ const cars = [
   },
   {
     id: 6,
-    name: 'Kia Carnival',
+    name: 'Lexus Lm 350',
     price: 450000000,
     kategori: 'mpv',
     description: 'MPV premium dan luas.',
     image:
-      'https://img.antaranews.com/cache/800x533/2021/03/02/2022_Carnival_-_7_Passenger.jpg',
+      'https://thumb.katadata.co.id/frontend/thumbnail/2022/09/02/zigi-6311c9a657afb-lexus-lm-350_910_512.jpg',
   },
 ];
 
@@ -74,9 +74,7 @@ function displayCars(filteredCars = cars) {
                 <p class="price" id="harga-${
                   car.id
                 }">Rp ${car.price.toLocaleString()}</p>
-                <button onclick="editDescription(${
-                  car.id
-                })">Edit</button>
+                <button onclick="editDescription(${car.id})">Edit</button>
                 <button onclick="buyCar(${car.id})">Beli</button>
             </div>
         `;
@@ -93,22 +91,25 @@ function buyCar(id) {
   alert(
     `Anda telah membeli ${car.name} seharga Rp ${car.price.toLocaleString()}.`
   );
+
   const carIndex = cars.findIndex((c) => c.id === id);
   if (carIndex > -1) {
-    cars.splice(carIndex, 1); // Hapus dari array
+    cars.splice(carIndex, 1); // Hapus mobil dari array
   }
-  displayCars(); // Tampilkan ulang kartu tanpa mobil yang telah dibeli
+
+  // Setelah pembelian, perbarui tampilan berdasarkan kategori yang dipilih
+  sortCarsByCategory();
 }
 
-// Fungsi untuk menyortir mobil berdasarkan kategori
 function sortCarsByCategory() {
   const kategori = document.getElementById('kategori').value;
 
   if (kategori === 'all') {
-    displayCars(); // Tampilkan semua mobil
+    displayCars(); // Jika kategori "all", tampilkan semua mobil
   } else {
+    // Filter ulang mobil berdasarkan kategori yang dipilih
     const filteredCars = cars.filter((car) => car.kategori === kategori);
-    displayCars(filteredCars); // Tampilkan mobil berdasarkan kategori
+    displayCars(filteredCars);
   }
 }
 
@@ -139,17 +140,17 @@ function editDescription(id) {
   if (newPrice !== null && newPrice.trim() !== '') {
     car.price = newPrice;
 
-    const rupiah = (number)=>{
-      return new Intl.NumberFormat("id-ID", {
-        style: "currency",
-        currency: "IDR"
+    const rupiah = (number) => {
+      return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
       }).format(number);
-    }
-    let harga = rupiah(car.price)
+    };
+    let harga = rupiah(car.price);
 
     const priceElement = document.getElementById(`harga-${car.id}`);
     if (priceElement) {
-      priceElement.textContent = harga
+      priceElement.textContent = harga;
     }
   }
 }
@@ -190,5 +191,45 @@ document.addEventListener('DOMContentLoaded', () => {
 // Event listener untuk formulir
 document.getElementById('addCarForm').addEventListener('submit', addCar);
 
+// * event listener untuk form dan untuk cards agar hide dan show
+function tombolForm(params) {
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('#addCarForm'); // Pastikan ID form sesuai
+    const cards = document.querySelector('.card-container'); // Sesuaikan selector cards
+    const toggleButton = document.querySelector('#show'); // Tombol toggle
+    const selectbtn = document.querySelector('.sort-panel'); // Tombol select
+
+    // Set kondisi awal: form tersembunyi, cards terlihat
+    form.style.display = 'none';
+    cards.style.display = 'flex';
+
+    // Tambahkan event listener untuk tombol
+    toggleButton.addEventListener('click', () => {
+      if (form.style.display === 'none') {
+        // Tampilkan form, sembunyikan cards
+        form.style.display = 'block';
+        cards.style.display = 'none';
+        toggleButton.textContent = 'Selesai'; // Ubah teks tombol
+        selectbtn.style.display = 'none';
+      } else {
+        // Tampilkan cards, sembunyikan form
+        form.style.display = 'none';
+        cards.style.display = 'flex';
+        toggleButton.textContent = 'Jual Mobil Anda Di Sini'; // Ubah teks tombol
+        selectbtn.style.display = 'contents';
+      }
+    });
+  });
+}
+
 // Tampilkan mobil saat halaman dimuat
 displayCars();
+tombolForm();
+
+module.export = {
+  displayCars,
+  buyCar,
+  editDescription,
+  addCar,
+  tombolForm,
+};

@@ -23,14 +23,39 @@ body {
   margin: 0;
   padding: 0;
   background: linear-gradient(
-    135deg,
-    #616161,
-    #bdc9ca
+    138deg,
+    #555555,
+    #cccccc
   ); /* Warna abu-abu ke putih */
   color: #333;
 }
 
 /* Header */
+
+header{
+  background-color: #333;
+}
+
+.logo{
+  width: 5vh;
+  border: #ff0000 2px solid;
+  border-radius: 12rem;
+}
+
+header button{
+  background-color: #949494;
+  background-image: linear-gradient(to bottom, #f6f6f7, #13aaaa);
+  font-size: 1.5vh;
+}
+
+nav{
+  justify-self: center;
+  float: right;
+  margin-top: 1.5vmin;
+  margin-right: 2vmin;
+}
+
+
 h1 {
   text-align: center;
   color: #4a4a4a; /* Abu-abu gelap */
@@ -123,6 +148,12 @@ select {
   width: 20vh;
   height: auto;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+  /* animasi */
+  animation: fadeIn 1s ease-in-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+
 }
 
 .card:hover {
@@ -195,4 +226,13 @@ select {
 .back-button:hover {
   background-color: #212b35;
   border-radius: 2% 4%;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: rgba(126, 126, 126, 0.685);
+  font-size: 14px;
+  float: bottom;
 }
